@@ -1,0 +1,13 @@
+[user]
+	name = Zachary Snow
+	email = zach@zachjs.com
+[push]
+	default = simple
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[core]
+	autocrlf = input
+[diff "pdf"]
+	textconv = hexdump -v -C

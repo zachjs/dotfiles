@@ -1,0 +1,82 @@
+set nocompatible " no vi-compatibility (should be early in .vimrc)
+
+" install vim-plug if it isn't already
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
+call plug#begin()
+Plug 'elzr/vim-json'
+Plug 'itchyny/lightline.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'Valloric/YouCompleteMe'
+call plug#end()
+
+" I've kinda decided that this is not worth it because the autoindent and
+" re-wrap functionality is *far* worse than what come with the default vim.
+" Default vim doesn't repeat bullet points, but everything else is better as far
+" as I can tell.
+"Plug 'plasticboy/vim-markdown'
+
+" Theme
+set background=dark
+colorscheme PaperColor
+
+" Display
+set number          " turn on absolute line numbering
+set relativenumber  " turn on relative line numbering
+set noshowmode      " vim-airline already shows the mode
+set showmatch       " highlight matching braces
+set title           " set window title to file
+set equalalways     " split windows equal size
+set laststatus=2    " make room for powerline-style plugins
+set nofoldenable		" no code folding
+
+" Navigation
+set nostartofline   " vertical movement preserves horizontal position
+set scrolloff=5     " min screen lines to keep above and below the cursor
+set backspace=indent,eol,start " 'better' backspacing, for unknown reasons
+set wildmode=longest,list " more unix-like tab completion
+
+" Indentation
+set tabstop=2       " tabs display as 4 spaces
+set expandtab       " tab key produces spaces
+set softtabstop=2   " number of spaces to produce on <Tab>
+set shiftwidth=2    " number of spaces to use for each step of (auto)indent
+set autoindent      " autoindent new lines
+" YCM broke Shift+Tab because it reads tab for completion
+" shift+tab inserts a literal tab character
+"inoremap <S-Tab> <C-V><Tab>
+" ctrl+i inserts a literal tab character
+inoremap <C-I> <C-V><Tab>
+
+
+" Line wrapping
+set wrap            " visually wrap lines
+set linebreak       " wrap long lines on good characters
+set textwidth=80    " max width of text that is being inserted
+set nojoinspaces    " join won't put two spaces after sentance punctuation
+set formatoptions=croq " enable comment line auto formatting
+
+" Buffer searching
+set incsearch       " move the cursor to the matched string
+set hlsearch        " highlight on search
+set ignorecase      " search ignoring case
+set smartcase       " override ignore case when term has capitalization
+
+" Other
+set encoding=utf-8  " UTF-8 character encoding
+set lazyredraw      " don't redraw while running macros
+set pastetoggle=<F2> " F2 toggles paste mode on/off
+set ttimeoutlen=0   " no delay for key codes
+set re=1            " greatly improves syntax perf on newer versions (non-Apple)
+set clipboard=unnamed " copy/paste from system clipboard
+
+" underline mispelled words
+hi SpellBad cterm=underline
+
+" strip all trailing whitespace on write
+autocmd BufWritePre * :%s/\s\+$//e

@@ -13,6 +13,8 @@ Plug 'elzr/vim-json'
 Plug 'itchyny/lightline.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " I've kinda decided that this is not worth it because the autoindent and
@@ -71,6 +73,9 @@ set clipboard=unnamed " copy/paste from system clipboard
 
 " ctrl+t inserts a literal tab character
 inoremap <C-T> <C-V><Tab>
+
+" ctrl+n toggles nerdtree
+map <C-N> :NERDTreeToggle<CR>
 
 " underline mispelled words
 hi SpellBad cterm=underline

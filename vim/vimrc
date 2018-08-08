@@ -17,12 +17,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
-" I've kinda decided that this is not worth it because the autoindent and
-" re-wrap functionality is *far* worse than what come with the default vim.
-" Default vim doesn't repeat bullet points, but everything else is better as far
-" as I can tell.
-"Plug 'plasticboy/vim-markdown'
-
 " Theme
 set background=dark
 colorscheme PaperColor
@@ -35,7 +29,7 @@ set showmatch       " highlight matching braces
 set title           " set window title to file
 set equalalways     " split windows equal size
 set laststatus=2    " make room for powerline-style plugins
-set nofoldenable		" no code folding
+set nofoldenable    " no code folding
 
 " Navigation
 set nostartofline   " vertical movement preserves horizontal position
@@ -68,7 +62,7 @@ set encoding=utf-8  " UTF-8 character encoding
 set lazyredraw      " don't redraw while running macros
 set pastetoggle=<F2> " F2 toggles paste mode on/off
 set ttimeoutlen=0   " no delay for key codes
-set re=1            " greatly improves syntax perf on newer versions (non-Apple)
+set regexpengine=1  " old engine has better syntax perf on newer versions
 set clipboard=unnamed " copy/paste from system clipboard
 
 " ctrl+t inserts a literal tab character

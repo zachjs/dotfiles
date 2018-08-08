@@ -47,12 +47,6 @@ set expandtab       " tab key produces spaces
 set softtabstop=2   " number of spaces to produce on <Tab>
 set shiftwidth=2    " number of spaces to use for each step of (auto)indent
 set autoindent      " autoindent new lines
-" YCM broke Shift+Tab because it reads tab for completion
-" shift+tab inserts a literal tab character
-"inoremap <S-Tab> <C-V><Tab>
-" ctrl+i inserts a literal tab character
-inoremap <C-I> <C-V><Tab>
-
 
 " Line wrapping
 set wrap            " visually wrap lines
@@ -74,6 +68,9 @@ set pastetoggle=<F2> " F2 toggles paste mode on/off
 set ttimeoutlen=0   " no delay for key codes
 set re=1            " greatly improves syntax perf on newer versions (non-Apple)
 set clipboard=unnamed " copy/paste from system clipboard
+
+" ctrl+t inserts a literal tab character
+inoremap <C-T> <C-V><Tab>
 
 " underline mispelled words
 hi SpellBad cterm=underline

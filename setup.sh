@@ -20,6 +20,13 @@ if [[ "$0" != "./setup.sh" ]]; then
   exit 1
 fi
 
+print_status() {
+  status_str=$1
+  color=$2
+  text=$3
+  echo "[\e[${color}m${status_str}\e[0m] $text"
+}
+
 handle_item() {
   item=$1
 
@@ -27,17 +34,17 @@ handle_item() {
   target="$HOME/.$item"
 
   if [[ ! -a "$source" ]]; then
-    echo "handle_item: '$item' not present in repository"
+    print_status FAIL 91 "$item (missing)"
     exit 1
   fi
 
   if [[ -a "$target" ]]; then
-    echo "$target already exists, skipping"
+    print_status SKIP 34 $item
     return
   fi
 
-  echo "$source -> $target"
   ln -s "$source" "$target"
+  print_status GOOD 93 $item
 }
 
 for item in `echo $ITEMS`; do

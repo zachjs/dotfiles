@@ -2,6 +2,9 @@
 
 # Author: Zachary Snow (zach@zachjs.com)
 
+git submodule init
+git submodule update
+
 # a whitelist seems more principled here than a blacklist
 ITEMS="
   gitconfig

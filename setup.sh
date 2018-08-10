@@ -2,6 +2,11 @@
 
 # Author: Zachary Snow (zach@zachjs.com)
 
+# move to the root of the repo
+dotfiles_folder=`dirname $0`
+cd $dotfiles_folder
+
+# clone submodules
 git submodule init
 git submodule update
 
@@ -13,12 +18,6 @@ ITEMS="
   vim
   zshrc
 "
-
-if [[ "$0" != "./setup.sh" ]]; then
-  echo "$0 is not ./setup.sh"
-  echo "script must be run from inside the dotfiles repository"
-  exit 1
-fi
 
 print_status() {
   status_str=$1

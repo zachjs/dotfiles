@@ -5,6 +5,8 @@
 # a whitelist seems more principled here than a blacklist
 ITEMS="
   gitconfig
+  oh-my-zsh
+  oh-my-zsh-custom
   vim
   zshrc
 "

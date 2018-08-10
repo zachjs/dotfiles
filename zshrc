@@ -1,5 +1,6 @@
 # path to oh my zsh installation
 export ZSH=~/.oh-my-zsh
+export ZSH_CUSTOM=~/.oh-my-zsh-custom
 
 # zsh settings
 ZSH_THEME="zachjs"        # provides a custom prompt loosely based on "simple"

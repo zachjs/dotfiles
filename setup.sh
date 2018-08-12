@@ -33,17 +33,22 @@ handle_item() {
   target="$HOME/.$item"
 
   if [[ ! -a "$source" ]]; then
-    print_status FAIL 91 "$item (missing)"
+    print_status FAIL 31 "$item (missing)"
     exit 1
   fi
 
+  if [[ `readlink "$target"` = "$source" ]]; then
+    print_status GOOD 32 $item
+    return
+  fi
+
   if [[ -a "$target" ]]; then
-    print_status SKIP 34 $item
+    print_status EXST 31 $item
     return
   fi
 
   ln -s "$source" "$target"
-  print_status GOOD 93 $item
+  print_status LINK 33 $item
 }
 
 for item in `echo $ITEMS`; do

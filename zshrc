@@ -5,6 +5,7 @@ export ZSH_CUSTOM=~/.oh-my-zsh-custom
 # zsh settings
 ZSH_THEME="zachjs"        # provides a custom prompt loosely based on "simple"
 HYPHEN_INSENSITIVE="true" # '_' and '-' are interchangeable WRT tab completion
+COMPLETION_WAITING_DOTS="true" # display red dots while waiting for completion
 
 # zsh plugins
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)

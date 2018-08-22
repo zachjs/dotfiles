@@ -28,35 +28,35 @@ alias cleantex="ls *.tex | sed -E -e 's/ /\n/' -e 's/^(.+).tex\$/\1.aux \1.log \
 
 # personal laptop settings
 if [[ "$HOST" = "zachs-mbp" ]]; then
-  # setup golang installation path
-  export GOPATH="~/.go"
-  # executable search PATH
-  export PATH=$PATH:/usr/local/sbin
-  export PATH=$PATH:/opt/c0/bin
-  export PATH=$PATH:$GOPATH/bin
-  # kerberos auth to allow password-less SSH login and SCP tab completion
-  kinit -k
+    # setup golang installation path
+    export GOPATH="~/.go"
+    # executable search PATH
+    export PATH=$PATH:/usr/local/sbin
+    export PATH=$PATH:/opt/c0/bin
+    export PATH=$PATH:$GOPATH/bin
+    # kerberos auth to allow password-less SSH login and SCP tab completion
+    kinit -k
 
 # setup for other machines
 else
-  # echo "Host not specified in .zshrc!"
+    # echo "Host not specified in .zshrc!"
 fi
 
 # add certain CMU courses' binaries to the search path
 if [[ -d /afs/andrew/course ]]; then
-  export PATH=$PATH:/afs/andrew/course/15/122/bin
-  export PATH=$PATH:/afs/andrew/course/15/150/bin
-  export PATH=$PATH:/afs/andrew/course/15/210/bin
+    export PATH=$PATH:/afs/andrew/course/15/122/bin
+    export PATH=$PATH:/afs/andrew/course/15/150/bin
+    export PATH=$PATH:/afs/andrew/course/15/210/bin
 fi
 
 # add 15-410 public binaries and staff scripts/binaries to the search path
 if [[ -d ~/410 ]]; then
-  export PATH=$PATH:~/410/bin
-  export PATH=$PATH:~/410/private/scripts
-  export PATH=$PATH:~/410/private/bin
+    export PATH=$PATH:~/410/bin
+    export PATH=$PATH:~/410/private/scripts
+    export PATH=$PATH:~/410/private/bin
 fi
 
 # login to the cs.cmu.edu AFS cell, if available
 if [[ -d /afs/cs.cmu.edu && "$USER" = "zsnow" ]]; then
-  aklog cs.cmu.edu
+    aklog cs.cmu.edu
 fi

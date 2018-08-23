@@ -10,8 +10,8 @@ COMPLETION_WAITING_DOTS="true" # display red dots while waiting for completion
 # zsh plugins
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
-# TODO what does this even do...?
-#fpath=(/usr/local/share/zsh-completions $fpath)
+# even more command-specific autocompletion (e.g., go, bower)
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # start oh my zsh
 source $ZSH/oh-my-zsh.sh

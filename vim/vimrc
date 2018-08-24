@@ -35,20 +35,20 @@ set nofoldenable    " no code folding
 set nostartofline   " vertical movement preserves horizontal position
 set scrolloff=5     " min screen lines to keep above and below the cursor
 set backspace=indent,eol,start " 'better' backspacing, for unknown reasons
-set wildmode=longest,list " more unix-like tab completion
+set wildmode=longest,list " more Unix-like tab completion
 
 " Indentation
 set tabstop=4       " tabs display as 4 spaces
 set expandtab       " tab key produces spaces
 set softtabstop=4   " number of spaces to produce on <Tab>
 set shiftwidth=4    " number of spaces to use for each step of (auto)indent
-set autoindent      " autoindent new lines
+set autoindent      " auto-indent new lines
 
 " Line wrapping
 set wrap            " visually wrap lines
 set linebreak       " wrap long lines on good characters
 set textwidth=80    " max width of text that is being inserted
-set nojoinspaces    " join won't put two spaces after sentance punctuation
+set nojoinspaces    " join won't put two spaces after sentence punctuation
 set formatoptions=croq " enable comment line auto formatting
 
 " Buffer searching
@@ -60,22 +60,22 @@ set smartcase       " override ignore case when term has capitalization
 " Other
 set encoding=utf-8  " UTF-8 character encoding
 set lazyredraw      " don't redraw while running macros
-set pastetoggle=<F2> " F2 toggles paste mode on/off
 set ttimeoutlen=0   " no delay for key codes
 set regexpengine=1  " old engine has better syntax perf on newer versions
+set pastetoggle=<F2> " F2 toggles paste mode on/off
 set clipboard=unnamed " copy/paste from system clipboard
 
 " ctrl+t inserts a literal tab character
-inoremap <C-T> <C-V><Tab>
+imap <C-T> <C-V><Tab>
 
 " ctrl+n toggles nerdtree
 map <C-N> :NERDTreeToggle<CR>
 
-" underline mispelled words
-hi SpellBad cterm=underline
+" underline misspelled words (helpful given my colorblindness)
+highlight SpellBad cterm=underline
 
 " strip all trailing whitespace on write
 autocmd BufWritePre * :keeppatterns %s/\s\+$//e
 
 " jump to the last position when reopening a file
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif

@@ -37,7 +37,7 @@ if [[ "$HOST" = "zachs-mbp" ]]; then
     export PATH=$PATH:/opt/c0/bin
     export PATH=$PATH:$GOPATH/bin
     # kerberos auth to allow password-less SSH login and SCP tab completion
-    kinit -k
+    kinit -k &> /dev/null
 
 # setup for other machines
 else

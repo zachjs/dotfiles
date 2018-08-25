@@ -1,3 +1,5 @@
+" Author: Zachary Snow <zach@zachjs.com>
+
 set nocompatible " no vi-compatibility (should be early in .vimrc)
 
 " install vim-plug if it isn't already

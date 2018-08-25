@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Author: Zachary Snow (zach@zachjs.com)
+# Author: Zachary Snow <zach@zachjs.com>
 
 # move to the root of the repo
 dotfiles_folder=`dirname $0`

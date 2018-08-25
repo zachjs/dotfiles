@@ -1,3 +1,4 @@
+# Author: Zachary Snow <zach@zachjs.com>
 # based on oh my zsh's "simple" theme
 
 local ret_status="[%B%(?:%F{green}%?%f:%F{red}%?%f)%b]%{$reset_color%}"

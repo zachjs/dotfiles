@@ -1,3 +1,5 @@
+# Author: Zachary Snow <zach@zachjs.com>
+
 # path to oh my zsh installation
 export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=~/.oh-my-zsh-custom

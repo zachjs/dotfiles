@@ -17,6 +17,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 " Theme

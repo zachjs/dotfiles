@@ -11,3 +11,6 @@
 	autocrlf = input
 [diff "pdf"]
 	textconv = hexdump -v -C
+[color]
+	diff = auto
+	status = auto

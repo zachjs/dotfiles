@@ -18,6 +18,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-sleuth'
+Plug 'vim-scripts/cmdalias.vim'
 call plug#end()
 
 " Theme

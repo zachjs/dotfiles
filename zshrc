@@ -58,6 +58,11 @@ if [[ -d ~/410 ]]; then
     export PATH=$PATH:~/410/private/bin
 fi
 
+# add VCS to the search path on the ECE cluster
+if [[ $HOST == ece*.ece.local.cmu.edu ]]; then
+    source /afs/ece/class/ece240/bin/setup_vcs
+fi
+
 # login to the cs.cmu.edu AFS cell, if available
 if [[ -d /afs/cs.cmu.edu && "$USER" = "zsnow" ]]; then
     aklog cs.cmu.edu

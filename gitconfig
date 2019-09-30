@@ -9,6 +9,7 @@
 	required = true
 [core]
 	autocrlf = input
+	excludesfile = ~/.global_gitignore
 [diff "pdf"]
 	textconv = hexdump -v -C
 [color]

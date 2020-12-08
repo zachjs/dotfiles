@@ -8,6 +8,7 @@
 	smudge = git hawser smudge %f
 	required = true
 [core]
+	pager = less -FRX
 	autocrlf = input
 	excludesfile = ~/.global_gitignore
 [diff "pdf"]

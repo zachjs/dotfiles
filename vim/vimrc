@@ -17,8 +17,9 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-sleuth'
-Plug 'vim-scripts/cmdalias.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 " Theme
@@ -72,14 +73,25 @@ set clipboard=unnamed " copy/paste from system clipboard
 " ctrl+t inserts a literal tab character
 imap <C-T> <C-V><Tab>
 
-" ctrl+n toggles nerdtree
-map <C-N> :NERDTreeToggle<CR>
-
 " underline misspelled words (helpful given my colorblindness)
 highlight SpellBad cterm=underline
 
 " strip all trailing whitespace on write
-autocmd BufWritePre * :keeppatterns %s/\s\+$//e
+autocmd BufWritePre * let w:wv = winsaveview() | :keeppatterns %s/\s\+$//e | call winrestview(w:wv)
 
 " jump to the last position when reopening a file
 autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" turn on spell checking when editing commit messages
+autocmd FileType gitcommit setlocal spell
+
+" use comma as leader key
+let mapleader = ","
+
+" shortcut to format cpp or python files
+autocmd FileType cpp nnoremap <buffer> <Leader>f :ClangFormat<CR>
+autocmd FileType python nnoremap <buffer> <Leader>f :Black<CR>
+
+" disable smartcase in command mode
+autocmd CmdLineEnter : set nosmartcase
+autocmd CmdLineLeave : set smartcase

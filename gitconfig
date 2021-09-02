@@ -16,3 +16,5 @@
 [color]
 	diff = auto
 	status = auto
+[alias]
+	adog = log --all --decorate --oneline --graph

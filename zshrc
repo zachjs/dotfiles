@@ -38,3 +38,6 @@ if [[ "$HOST" = "zachs-mbp" ]]; then
 else
     # echo "Host not specified in .zshrc!"
 fi
+
+# https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#silver-searcher-output
+export RIPGREP_CONFIG_PATH=~/.rgrc

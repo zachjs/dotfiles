@@ -16,6 +16,7 @@ ITEMS="
     gitconfig
     oh-my-zsh
     oh-my-zsh-custom
+    rgrc
     vim
     zshrc
 "
